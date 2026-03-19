@@ -88,6 +88,42 @@ california = fetch_california_housing(as_frame=True)
 
 ---
 
+## ⚠️ Known Limitations
+ 
+### 1. Older homes predict higher prices
+Intuitively, you'd expect older properties to be worth less due to depreciation. However, the model often predicts **higher prices for older homes** — and this is not a bug, it's a dataset artifact.
+ 
+The California Housing dataset comes from the **1990 U.S. Census**, where older homes were frequently located in **established, high-demand neighborhoods** (historic SF districts, prime LA areas). The model learned this correlation:
+ 
+```
+older age → established neighborhood → higher price
+```
+ 
+This is a **correlation vs. causation** problem. The model is statistically correct on the training data, but the signal is confounded by location prestige, not age itself.
+ 
+**What's missing to fix this properly:**
+ 
+| Missing Feature | Why It Matters |
+|---|---|
+| Renovation history | A 1920s home fully renovated ≠ a deteriorated one |
+| Neighborhood quality score | Age means different things in different areas |
+| Proximity to amenities | Schools, transit, parks drive value independently |
+| Crime rate | Strong negative price signal not captured here |
+| Property condition | Raw age ignores maintenance and upgrades |
+ 
+**Potential fixes for a v2:**
+- Engineer an `age × income` interaction term to distinguish "old but wealthy area" from "old and declining area"
+- Add a depreciation curve that only penalizes age in low-income census blocks
+- Use a richer dataset (Zillow, Redfin, or ATTOM) with condition and renovation data
+ 
+### 2. Dataset is from 1990
+Prices, income levels, and neighborhood compositions have changed dramatically over 35 years. Predictions reflect **1990 California market dynamics**, not today's. This model is best used as a learning tool rather than a real valuation system.
+ 
+### 3. Fixed population & occupancy
+The app fixes `Population = 1,200` and `AveOccup = 3.0` for simplicity. In reality these vary significantly across census blocks and do influence the prediction.
+ 
+---
+
 ## 🛠 Tech Stack
 
 | Layer | Technology |
