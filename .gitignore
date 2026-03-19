@@ -1,0 +1,15 @@
+# Python / Django
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.sqlite3
+
+# Ignore the uncompressed training models
+ml_model/*.pkl
+
+# Node / React
+frontend/node_modules/
+frontend/dist/
+
+.DS_Store
