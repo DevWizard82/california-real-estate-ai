@@ -9,20 +9,6 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#-overview)
-- [Features](#-features)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Running the App](#-running-the-app)
-- [Run on Google Colab (No Local Setup)](#-run-on-google-colab-no-local-setup)
-- [How the Model Works](#-how-the-model-works)
-- [Dataset](#-dataset)
-- [Tech Stack](#-tech-stack)
-
----
-
 ## 🔍 Overview
 
 **PropVal AI** is an interactive Streamlit dashboard that lets you adjust property parameters — income level, house age, room count, and geographic coordinates — and get an instant AI-powered market valuation. The model is a **Random Forest Regressor** trained on 20,000+ California housing records, achieving ~94% accuracy (R²).
