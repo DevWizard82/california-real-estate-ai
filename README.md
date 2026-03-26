@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-FF4B4B?style=flat&logo=streamlit&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3+-F7931E?style=flat&logo=scikit-learn&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-deb887?style=for-the-badge)](https://california-real-estate-ai-6cpbj48p8azmhr4tdbhjmo.streamlit.app/)
 
 ---
 
